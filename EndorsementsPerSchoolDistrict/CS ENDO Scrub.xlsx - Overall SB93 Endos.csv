@@ -1,0 +1,471 @@
+person_id,district_nbr,LEA,school_name,school_nbr,cert_endo_degree_desc,endo_receive_date
+2306.2044,1,Alpine District,Lehi High,708,Computer Science - Level 2,6/30/1986
+2304.8856,1,Alpine District,Orem Jr High,414,Computer Science - Level 2,10/30/1987
+2289.7194,1,Alpine District,Oak Canyon Jr High,412,Computer Science - Level 2,2/28/1988
+2283.1568,1,Alpine District,Lehi Jr High,408,Computer Science - Level 2,9/30/1988
+2283.1568,1,Alpine District,Skyridge High School,785,Computer Science - Level 2,9/30/1988
+2291.7604,1,Alpine District,East Shore Online,790,Computer Science - Level 2,9/30/1989
+95.8956,1,Alpine District,Mountain Ridge Jr High,410,Computer Science - Level 2,7/30/1992
+1576.4684,1,Alpine District,Lone Peak High,709,Computer Science - Level 2,10/30/1992
+2651.8556,1,Alpine District,Oak Canyon Jr High,412,Computer Science - Level 2,9/30/1993
+2136.6444,1,Alpine District,Lehi High,708,Computer Science - Level 2,10/30/1994
+2331.764,1,Alpine District,Lone Peak High,709,Computer Science - Level 2,7/30/1997
+2328.1216,1,Alpine District,Pleasant Grove High,716,Computer Science - Level 2,10/30/1997
+2136.6444,1,Alpine District,Lehi High,708,Computer Science - Level 2,7/16/1999
+4560.4732,1,Alpine District,Pleasant Grove Jr High,416,Web Development,10/7/2008
+4560.4732,1,Alpine District,Pleasant Grove Jr High,416,Web Development,10/7/2008
+17767.2818,1,Alpine District,Mountain Ridge Jr High,410,Computer Science - Level 2,6/17/2010
+2271.5074,1,Alpine District,Lakeridge Jr High,406,Exploring CS,3/28/2014
+2283.1568,1,Alpine District,Lehi Jr High,408,Exploring CS,3/28/2014
+2297.9148,1,Alpine District,Mountain Ridge Jr High,410,Exploring CS,3/28/2014
+2283.1568,1,Alpine District,Skyridge High School,785,Exploring CS,3/28/2014
+2271.5074,1,Alpine District,Lakeridge Jr High,406,Computer Science - Level 2,4/25/2014
+4560.4732,1,Alpine District,Pleasant Grove Jr High,416,Computer Science - Level 2,4/25/2014
+4560.4732,1,Alpine District,Pleasant Grove Jr High,416,Computer Science - Level 2,4/25/2014
+18302.4006,1,Alpine District,Orem High,712,Computer Science - Level 2,5/21/2014
+2339.4256,1,Alpine District,Timberline Middle,420,Exploring CS,3/10/2015
+21315.0422,1,Alpine District,Pleasant Grove High,716,Exploring CS,4/15/2015
+2319.8634,1,Alpine District,Summit High,730,Exploring CS,2/2/2016
+15803.2432,1,Alpine District,Frontier Middle School,417,Exploring CS,2/10/2016
+19208.9186,1,Alpine District,Polaris High School,782,Exploring CS,2/10/2016
+17021.5946,1,Alpine District,Orem Jr High,414,Exploring CS,6/22/2016
+2285.0722,1,Alpine District,Skyridge High School,785,Exploring CS,7/27/2016
+2586.0412,1,Alpine District,Lone Peak High,709,Exploring CS,8/22/2016
+8964.5116,1,Alpine District,Mountain View High,711,Exploring CS,12/14/2016
+18237.1828,1,Alpine District,Westlake High,789,Web Development,7/18/2017
+2297.9148,1,Alpine District,Mountain Ridge Jr High,410,Computer Science - Level 1,8/17/2017
+17990.944,1,Alpine District,Timberline Middle,420,Exploring CS,8/17/2017
+21315.0422,1,Alpine District,Pleasant Grove High,716,Computer Science - Level 2,10/4/2017
+2586.0412,1,Alpine District,Lone Peak High,709,Web Development,11/16/2017
+22377.9008,1,Alpine District,Mountain View High,711,Computer Science - Level 1,11/27/2017
+22377.9008,1,Alpine District,Mountain View High,711,Computer Science - Level 2,11/27/2017
+22377.9008,1,Alpine District,Mountain View High,711,Web Development,11/27/2017
+18360.9616,1,Alpine District,American Fork Jr High,404,Exploring CS,1/5/2018
+5904.7072,1,Alpine District,Willowcreek Middle,425,Exploring CS,1/5/2018
+8964.5116,1,Alpine District,Mountain View High,711,Web Development,1/18/2018
+21674.9176,1,Alpine District,American Fork High,704,Computer Science - Level 1,3/7/2018
+21674.9176,1,Alpine District,American Fork High,704,Computer Science - Level 2,3/7/2018
+2342.0946,2,Beaver District,Beaver District,2,Web Development,1/3/2005
+1833.603,3,Box Elder District,Bear River High,704,Computer Science - Level 2,2/28/1988
+1833.603,3,Box Elder District,Bear River Middle,404,Computer Science - Level 2,2/28/1988
+2358.7366,3,Box Elder District,Bear River High,704,Computer Science - Level 2,7/30/1988
+2356.1618,3,Box Elder District,Bear River High,704,Computer Science - Level 2,11/30/1988
+2169.112,3,Box Elder District,Young Intermediate,308,Computer Science - Level 2,9/30/1989
+2350.0074,3,Box Elder District,Bear River High,704,Computer Science - Level 2,9/30/1990
+2346.7732,3,Box Elder District,Box Elder Middle,408,Computer Science - Level 2,9/30/1993
+1769.547,3,Box Elder District,Bear River Middle,404,Computer Science - Level 2,12/19/2000
+2358.7366,3,Box Elder District,Bear River High,704,Computer Science - Level 2,4/25/2014
+9316.4114,3,Box Elder District,Box Elder High,708,Computer Science - Level 1,6/1/2017
+9316.4114,3,Box Elder District,Box Elder Middle,408,Computer Science - Level 1,6/1/2017
+22377.9636,3,Box Elder District,Box Elder High,708,Computer Science - Level 1,11/29/2017
+22377.9636,3,Box Elder District,Box Elder High,708,Computer Science - Level 2,11/29/2017
+2039.4928,4,Cache District,North Cache Middle School,406,Computer Science - Level 2,1/30/1987
+2370.0092,4,Cache District,Green Canyon High School,703,Computer Science - Level 2,8/30/1989
+2381.6272,4,Cache District,Sky View High,706,Computer Science - Level 2,8/30/1989
+2378.5186,4,Cache District,Ridgeline High School,705,Computer Science - Level 2,8/30/1990
+2380.8108,4,Cache District,Ridgeline High School,705,Computer Science - Level 2,4/30/1991
+27.9774,4,Cache District,Spring Creek Middle School,330,Computer Science - Level 2,7/30/1995
+2370.0092,4,Cache District,Green Canyon High School,703,Web Development,3/9/2010
+2370.0092,4,Cache District,Green Canyon High School,703,Computer Science - Level 2,4/25/2014
+2370.0092,4,Cache District,Green Canyon High School,703,Exploring CS,3/10/2015
+15334.975,4,Cache District,Mountain Crest High,702,Exploring CS,9/29/2016
+2378.3302,4,Cache District,Ridgeline High School,705,Exploring CS,2/2/2017
+4740.301,4,Cache District,Mountain Crest High,702,Exploring CS,3/1/2017
+18265.9138,4,Cache District,Green Canyon High School,703,Exploring CS,7/21/2017
+14538.8594,4,Cache District,Sky View High,706,Exploring CS,4/12/2018
+17892.5678,4,Cache District,Sky View High,706,Exploring CS,4/12/2018
+2384.8928,5,Carbon District,Carbon High,704,Computer Science - Level 2,4/25/2014
+2384.8928,5,Carbon District,Carbon High,704,Computer Science - Level 2,4/25/2014
+2477.5542,7,Davis District,Woods Cross High,714,Computer Science - Level 2,10/30/1986
+2407.0926,7,Davis District,Viewmont High,712,Computer Science - Level 2,7/30/1987
+948.0288,7,Davis District,Viewmont High,712,Computer Science - Level 2,9/30/1988
+2477.3658,7,Davis District,Davis District,7,Computer Science - Level 2,7/30/1989
+2401.2522,7,Davis District,Northridge High,711,Computer Science - Level 2,8/30/1989
+2945.2258,7,Davis District,Northridge High,711,Computer Science - Level 2,9/30/1989
+2447.1276,7,Davis District,Davis District,7,Computer Science - Level 2,10/30/1989
+2432.3696,7,Davis District,Layton High,710,Computer Science - Level 2,10/30/1990
+2399.8392,7,Davis District,Layton High,710,Computer Science - Level 2,9/30/1991
+2399.8392,7,Davis District,North Davis Jr High,412,Computer Science - Level 2,9/30/1991
+2480.0976,7,Davis District,Davis District,7,Computer Science - Level 2,8/30/1992
+2416.5126,7,Davis District,Layton High,710,Computer Science - Level 2,3/30/1994
+2396.134,7,Davis District,Syracuse High,716,Computer Science - Level 2,11/30/1994
+2468.04,7,Davis District,Woods Cross High,714,Computer Science - Level 2,9/30/1995
+2429.7634,7,Davis District,Tolman School,172,Computer Science - Level 2,10/30/1995
+3029.5662,7,Davis District,Syracuse High,716,Computer Science - Level 2,11/30/1995
+2927.6732,7,Davis District,Davis District,7,Computer Science - Level 2,7/30/1996
+1266.362,7,Davis District,Tolman School,172,Computer Science - Level 2,5/29/2003
+3125.0536,7,Davis District,Davis District,7,Web Development,9/3/2004
+17225.0352,7,Davis District,Syracuse Jr High,420,Computer Science - Level 2,10/22/2007
+17615.243,7,Davis District,Legacy Jr High,424,Computer Science - Level 2,6/1/2010
+18129.9204,7,Davis District,West Point Jr High,422,Computer Science - Level 2,1/28/2013
+17244.5032,7,Davis District,Layton High,710,Web Development,10/29/2013
+2447.1276,7,Davis District,Davis District,7,Computer Science - Level 2,4/25/2014
+21054.7362,7,Davis District,Clearfield High,706,Computer Science - Level 2,1/12/2015
+17658.2924,7,Davis District,Syracuse High,716,Computer Science - Level 2,9/23/2015
+17658.2924,7,Davis District,Syracuse High,716,Exploring CS,9/23/2015
+17244.5032,7,Davis District,Layton High,710,Exploring CS,2/10/2016
+2255.4934,7,Davis District,North Davis Jr High,412,Exploring CS,4/11/2016
+3160.0646,7,Davis District,Mueller Park Jr High,413,Exploring CS,8/11/2016
+4739.2962,7,Davis District,Woods Cross High,714,Exploring CS,2/15/2017
+17178.94,7,Davis District,North Davis Jr High,412,Exploring CS,4/21/2017
+17178.94,7,Davis District,North Davis Jr High,412,Computer Science - Level 1,6/22/2017
+21428.302,7,Davis District,Northridge High,711,Computer Science - Level 2,10/2/2017
+21428.302,7,Davis District,Northridge High,711,Exploring CS,10/2/2017
+17658.2924,7,Davis District,Syracuse High,716,Computer Science - Level 2,3/12/2018
+17658.2924,7,Davis District,Syracuse High,716,Exploring CS,3/12/2018
+16742.1346,7,Davis District,South Davis Jr High,416,Computer Science - Level 2,3/21/2018
+16742.1346,7,Davis District,South Davis Jr High,416,Exploring CS,3/21/2018
+3589.2712,8,Duchesne District,Roosevelt Jr High,404,Exploring CS,10/20/2015
+2502.266,9,Emery District,Emery High,706,Computer Science - Level 2,6/30/1986
+2500.853,9,Emery District,Emery High,706,Computer Science - Level 2,5/30/1992
+2503.7104,9,Emery District,Emery High,706,Computer Science - Level 1,2/16/2018
+322.1326,10,Garfield District,Panguitch High,712,Web Development,9/3/2004
+322.1326,10,Garfield District,Panguitch Middle,304,Web Development,9/3/2004
+322.1326,10,Garfield District,Panguitch High,712,Exploring CS,3/28/2014
+322.1326,10,Garfield District,Panguitch Middle,304,Exploring CS,3/28/2014
+2507.447,10,Garfield District,Bryce Valley High,704,Exploring CS,9/26/2016
+1956.9108,11,Grand District,Grand County High,704,Web Development,2/7/2011
+3141.7584,11,Grand District,Grand County High,704,Web Development,9/29/2015
+2527.4802,12,Granite District,Granite District,12,Computer Science - Level 2,6/30/1986
+2592.5724,12,Granite District,Taylorsville High,722,Computer Science - Level 2,11/30/1987
+2518.3428,12,Granite District,Olympus High,716,Computer Science - Level 2,9/30/1988
+2557.53,12,Granite District,Granite District,12,Computer Science - Level 2,11/30/1988
+462.051,12,Granite District,Evergreen Jr High,412,Computer Science - Level 2,1/30/1991
+2610.8786,12,Granite District,Cyprus High,704,Computer Science - Level 2,10/30/1994
+2603.1542,12,Granite District,Cyprus High,704,Computer Science - Level 2,10/30/1995
+2758.5528,12,Granite District,Granite District,12,Computer Science - Level 2,11/30/1995
+905.9842,12,Granite District,Gearld Wright School,131,Computer Science - Level 2,1/30/1996
+1397.4256,12,Granite District,Bennion Jr High,400,Computer Science - Level 2,3/30/1996
+2565.38,12,Granite District,Evergreen Jr High,412,Computer Science - Level 2,9/30/1996
+2226.3542,12,Granite District,Youth Educational Support School,501,Computer Science - Level 2,6/30/1997
+14853.0792,12,Granite District,Evergreen Jr High,412,Computer Science - Level 2,8/10/2006
+905.9842,12,Granite District,Gearld Wright School,131,Computer Science - Level 2,2/24/2009
+16117.0548,12,Granite District,Skyline High,718,Computer Science - Level 2,3/19/2009
+2530.055,12,Granite District,Cyprus High,704,Computer Science - Level 2,4/25/2014
+2530.055,12,Granite District,Cyprus High,704,Computer Science - Level 2,4/25/2014
+10723.414,12,Granite District,Redwood School,184,Computer Science - Level 2,4/25/2014
+10723.414,12,Granite District,Redwood School,184,Computer Science - Level 2,4/25/2014
+17046.4948,12,Granite District,Granite District,12,Exploring CS,3/10/2015
+18016.1582,12,Granite District,Granite Technical Institute,775,Computer Science - Level 2,4/13/2015
+18016.1582,12,Granite District,Granite Technical Institute,775,Web Development,4/13/2015
+17046.4948,12,Granite District,Granite District,12,Computer Science - Level 2,6/1/2015
+17510.995,12,Granite District,Cottonwood High,702,Exploring CS,1/5/2016
+2512.0314,12,Granite District,Bennion Jr High,400,Exploring CS,2/10/2016
+2533.2892,12,Granite District,Eisenhower Jr High,411,Exploring CS,2/10/2016
+16117.0548,12,Granite District,Skyline High,718,Exploring CS,5/5/2016
+1627.9644,12,Granite District,Bennion Jr High,400,Exploring CS,5/12/2016
+20630.8048,12,Granite District,Olympus High,716,Exploring CS,8/11/2016
+17351.8284,12,Granite District,Hunter High,710,Computer Science - Level 2,10/11/2016
+2129.8934,12,Granite District,Olympus Jr High,424,Exploring CS,4/21/2017
+17687.0548,12,Granite District,Taylorsville High,722,Exploring CS,4/21/2017
+17194.2318,12,Granite District,Granger High,708,Computer Science - Level 2,5/8/2017
+286.054,12,Granite District,Hunter High,710,Exploring CS,8/17/2017
+20630.8048,12,Granite District,Olympus High,716,Computer Science - Level 1,10/4/2017
+2624.5376,12,Granite District,Evergreen Jr High,412,Exploring CS,10/4/2017
+2630.5978,12,Granite District,Granite District,12,Exploring CS,10/4/2017
+3180.7258,12,Granite District,Hunter High,710,Exploring CS,10/4/2017
+17351.8284,12,Granite District,Hunter High,710,Exploring CS,10/11/2017
+443.525,12,Granite District,Hunter Jr High,418,Exploring CS,11/2/2017
+3180.7258,12,Granite District,Hunter High,710,Computer Science - Level 2,11/16/2017
+2596.3404,12,Granite District,Eisenhower Jr High,411,Exploring CS,1/5/2018
+2489.6118,12,Granite District,Churchill Jr High,410,Exploring CS,3/21/2018
+2635.716,13,Iron District,Cedar Middle,304,Web Development,6/27/2003
+17482.2326,13,Iron District,Canyon View High,712,Computer Science - Level 2,7/21/2010
+208.5588,13,Iron District,Canyon View Middle,308,Exploring CS,4/21/2017
+2695.4388,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,6/30/1986
+2718.455,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,6/30/1986
+2676.5046,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,10/30/1986
+728.637,14,Jordan District,West Jordan Middle,412,Computer Science - Level 2,8/30/1987
+1970.6012,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,8/30/1987
+1810.2728,14,Jordan District,Copper Mountain Middle,419,Computer Science - Level 2,1/30/1988
+2740.5606,14,Jordan District,West Jordan High,718,Computer Science - Level 2,9/30/1990
+2727.6552,14,Jordan District,Herriman High,707,Computer Science - Level 2,3/30/1991
+962.7868,14,Jordan District,Valley High School,716,Computer Science - Level 2,10/30/1991
+3076.7918,14,Jordan District,Herriman High,707,Computer Science - Level 2,2/28/1998
+594.5276,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,9/3/1999
+2704.639,14,Jordan District,Jordan Academy for Technology & Careers South,744,Web Development,7/26/2006
+2704.639,14,Jordan District,Jordan Academy for Technology and Careers - North,741,Web Development,7/26/2006
+15013.2192,14,Jordan District,Fort Herriman Middle,417,Exploring CS,3/28/2014
+17608.7118,14,Jordan District,Fort Herriman Middle,417,Exploring CS,3/28/2014
+14536.944,14,Jordan District,Bingham High,704,Computer Science - Level 2,4/25/2014
+2727.6552,14,Jordan District,Herriman High,707,Web Development,9/25/2014
+2699.4266,14,Jordan District,Sunset Ridge Middle,416,Exploring CS,3/10/2015
+14852.357,14,Jordan District,Oquirrh Hills Middle,409,Exploring CS,9/22/2015
+2727.6552,14,Jordan District,Herriman High,707,Exploring CS,10/26/2015
+16960.4588,14,Jordan District,South Jordan Middle,411,Exploring CS,1/28/2016
+9317.8558,14,Jordan District,Joel P. Jensen Middle,406,Exploring CS,2/10/2016
+1810.2728,14,Jordan District,Copper Mountain Middle,419,Exploring CS,5/5/2016
+16960.4588,14,Jordan District,South Jordan Middle,411,Computer Science - Level 2,2/2/2017
+429.3008,14,Jordan District,West Hills Middle,414,Exploring CS,2/15/2017
+21515.9708,14,Jordan District,Riverton High,710,Exploring CS,3/6/2017
+17860.9794,14,Jordan District,Bingham High,704,Computer Science - Level 1,4/21/2017
+21636.2956,14,Jordan District,Bingham High,704,Web Development,9/27/2017
+2665.6088,14,Jordan District,Herriman High,707,Computer Science - Level 1,10/4/2017
+18253.7306,14,Jordan District,Oquirrh Hills Middle,409,Exploring CS,3/7/2018
+17697.668,14,Jordan District,Copper Hills High,703,Computer Science - Level 1,3/14/2018
+17697.668,14,Jordan District,Copper Hills High,703,Computer Science - Level 2,3/14/2018
+17697.668,14,Jordan District,Copper Hills High,703,Exploring CS,3/14/2018
+618.4858,15,Juab District,Juab High,704,Exploring CS,11/14/2014
+21471.2572,16,Kane District,Valley High,708,Exploring CS,12/5/2017
+21471.2572,16,Kane District,Valley High,708,Web Development,4/12/2018
+2769.5114,17,Millard District,Delta High,704,Computer Science - Level 2,8/30/1987
+2767.4076,17,Millard District,Delta Middle,311,Exploring CS,11/3/2016
+2771.9292,17,Millard District,Delta High,704,Exploring CS,3/16/2017
+17977.599,18,Morgan District,Morgan School,104,Computer Science - Level 2,8/31/2011
+21440.8934,18,Morgan District,Morgan High,704,Computer Science - Level 1,11/2/2017
+21440.8934,18,Morgan District,Morgan High,704,Exploring CS,11/2/2017
+2782.04,19,Nebo District,Salem Hills High,706,Computer Science - Level 2,1/30/1989
+2777.7382,19,Nebo District,Payson High,704,Computer Science - Level 2,10/30/1990
+2782.6052,19,Nebo District,Springville High,712,Computer Science - Level 2,11/30/1995
+2785.337,19,Nebo District,Spanish Fork Jr High,420,Computer Science - Level 2,11/4/1999
+1844.1848,19,Nebo District,Salem Hills High,706,Computer Science - Level 2,4/25/2014
+2796.2956,19,Nebo District,Spanish Fork High,708,Computer Science - Level 2,4/25/2014
+2796.2956,19,Nebo District,Spanish Fork High,708,Computer Science - Level 2,4/25/2014
+2796.2956,19,Nebo District,Springville High,712,Computer Science - Level 2,4/25/2014
+2796.2956,19,Nebo District,Springville High,712,Computer Science - Level 2,4/25/2014
+18047.9978,19,Nebo District,Maple Mountain High,702,Computer Science - Level 2,10/28/2014
+18047.9978,19,Nebo District,Nebo Advanced Learning Center,747,Computer Science - Level 2,10/28/2014
+17647.3652,19,Nebo District,Springville High,712,Exploring CS,3/10/2015
+18285.0992,19,Nebo District,Nebo Advanced Learning Center,747,Web Development,8/14/2015
+2796.2956,19,Nebo District,Spanish Fork High,708,Web Development,8/25/2015
+2796.2956,19,Nebo District,Springville High,712,Web Development,8/25/2015
+1844.1848,19,Nebo District,Salem Hills High,706,Web Development,11/30/2015
+7529.0606,19,Nebo District,Spanish Fork Jr High,420,Exploring CS,1/5/2016
+17689.6296,19,Nebo District,Salem Junior High,416,Exploring CS,2/9/2016
+16743.893,19,Nebo District,Diamond Fork Junior High,402,Exploring CS,5/5/2016
+1844.1848,19,Nebo District,Salem Hills High,706,Exploring CS,2/21/2017
+2807.1914,19,Nebo District,Spanish Fork High,708,Exploring CS,2/21/2017
+8318.2682,19,Nebo District,Payson Jr High,408,Exploring CS,3/1/2017
+13093.2976,19,Nebo District,Spanish Fork High,708,Exploring CS,3/1/2017
+17998.8882,19,Nebo District,Springville High,712,Exploring CS,3/1/2017
+17998.8882,19,Nebo District,Springville High,712,Web Development,6/7/2017
+17656.5026,19,Nebo District,Mt. Nebo Junior High,406,Exploring CS,8/17/2017
+705.9662,20,North Sanpete District,Fairview School,104,Computer Science - Level 2,10/30/1990
+2811.6188,20,North Sanpete District,North Sanpete Middle,404,Computer Science - Level 2,6/30/1997
+2814.1622,21,North Summit District,North Summit High,704,Computer Science - Level 2,8/30/1996
+2814.1622,21,North Summit District,North Summit High,704,Computer Science - Level 2,4/25/2014
+2838.3716,22,Park City District,Park City High,704,Computer Science - Level 2,9/30/1996
+21514.024,22,Park City District,Park City High,704,Computer Science - Level 2,9/26/2016
+21514.024,22,Park City District,Treasure Mtn. Junior High School,304,Computer Science - Level 2,9/26/2016
+21514.024,22,Park City District,Park City High,704,Exploring CS,7/21/2017
+21514.024,22,Park City District,Treasure Mtn. Junior High School,304,Exploring CS,7/21/2017
+2823.4252,23,Piute District,Piute High,708,Web Development,5/27/2005
+2831.4008,25,San Juan District,Monticello High,704,Computer Science - Level 2,9/30/1986
+2827.884,25,San Juan District,Monticello High,704,Computer Science - Level 2,8/30/1988
+2827.9154,25,San Juan District,Monticello High,704,Computer Science - Level 2,4/30/1989
+16972.2652,25,San Juan District,Monticello High,704,Exploring CS,2/22/2018
+16972.2652,25,San Juan District,Monticello High,704,Web Development,2/22/2018
+2834.6036,26,Sevier District,South Sevier Middle,320,Computer Science - Level 2,8/30/1987
+4549.1064,26,Sevier District,Cedar Ridge High,716,Web Development,7/11/2003
+2843.7096,27,South Sanpete District,South Sanpete District,27,Computer Science - Level 2,6/30/1987
+1513.009,27,South Sanpete District,Manti High,708,Computer Science - Level 2,3/30/1999
+18115.7276,27,South Sanpete District,Gunnison Valley High,704,Computer Science - Level 1,9/1/2016
+18115.7276,27,South Sanpete District,Manti High,708,Computer Science - Level 1,9/1/2016
+18115.7276,27,South Sanpete District,South Sanpete District,27,Computer Science - Level 1,9/1/2016
+18115.7276,27,South Sanpete District,Gunnison Valley High,704,Computer Science - Level 2,9/1/2016
+18115.7276,27,South Sanpete District,Manti High,708,Computer Science - Level 2,9/1/2016
+18115.7276,27,South Sanpete District,South Sanpete District,27,Computer Science - Level 2,9/1/2016
+18115.7276,27,South Sanpete District,Gunnison Valley High,704,Exploring CS,9/1/2016
+18115.7276,27,South Sanpete District,Manti High,708,Exploring CS,9/1/2016
+18115.7276,27,South Sanpete District,South Sanpete District,27,Exploring CS,9/1/2016
+911.2908,28,South Summit District,Silver Summit Academy,705,Computer Science - Level 2,8/30/1987
+911.2908,28,South Summit District,South Summit High,704,Computer Science - Level 2,8/30/1987
+1105.5312,28,South Summit District,South Summit High,704,Computer Science - Level 2,10/30/1998
+2673.6158,30,Tooele District,Tooele Jr High,404,Computer Science - Level 2,10/30/1993
+5580.8162,30,Tooele District,Stansbury High,720,Computer Science - Level 2,11/26/2001
+5580.8162,30,Tooele District,Stansbury High,720,Computer Science - Level 2,3/17/2004
+13727.3578,30,Tooele District,Tooele Jr High,404,Computer Science - Level 2,4/25/2014
+13727.3578,30,Tooele District,Tooele Jr High,404,Exploring CS,4/13/2015
+231.1668,30,Tooele District,Tooele High,712,Exploring CS,7/27/2016
+17767.062,30,Tooele District,Blue Peak High,740,Exploring CS,4/4/2017
+17767.062,30,Tooele District,Blue Peak High,740,Computer Science - Level 1,5/23/2017
+6716.2402,30,Tooele District,Stansbury High,720,Exploring CS,11/16/2017
+231.1668,30,Tooele District,Tooele High,712,Web Development,3/7/2018
+17767.062,30,Tooele District,Blue Peak High,740,Computer Science - Level 2,3/21/2018
+21471.32,30,Tooele District,Stansbury High,720,Exploring CS,3/21/2018
+21471.32,30,Tooele District,Wendover High,714,Exploring CS,3/21/2018
+2864.779,31,Uintah District,Uintah High,704,Computer Science - Level 2,3/30/1987
+2865.9722,31,Uintah District,Ashley Valley Educ. Ctr.,750,Computer Science - Level 2,4/25/2014
+13728.3626,31,Uintah District,Uintah High,704,Computer Science - Level 2,12/19/2014
+9786.1868,31,Uintah District,Uintah High,704,Exploring CS,7/21/2017
+2878.7206,32,Wasatch District,Wasatch High,704,Computer Science - Level 2,1/30/1987
+17858.3732,32,Wasatch District,Wasatch High,704,Exploring CS,9/29/2015
+2889.6478,33,Washington District,Washington District,33,Computer Science - Level 2,9/30/1988
+2905.1594,33,Washington District,Pine View High,720,Computer Science - Level 2,10/30/1993
+2891.7516,33,Washington District,Pine View High,720,Computer Science - Level 2,3/30/1994
+2886.759,33,Washington District,Desert Hills High,703,Computer Science - Level 2,7/30/1995
+2897.5606,33,Washington District,Snow Canyon High,725,Computer Science - Level 2,3/30/1996
+2906.3526,33,Washington District,Hurricane Middle,408,Computer Science - Level 2,3/30/1996
+2897.3722,33,Washington District,Hurricane High,716,Computer Science - Level 2,8/30/1996
+2911.408,33,Washington District,Enterprise High,712,Computer Science - Level 2,3/30/1999
+3172.6874,33,Washington District,Enterprise High,712,Computer Science - Level 2,4/4/2000
+2881.4524,33,Washington District,Hurricane High,716,Web Development,6/27/2003
+12944.3988,33,Washington District,Snow Canyon High,725,Web Development,1/23/2004
+13423.186,33,Washington District,Pine View High,720,Computer Science - Level 2,7/26/2005
+13423.186,33,Washington District,Utah Online 7-12,500,Computer Science - Level 2,7/26/2005
+13423.186,33,Washington District,Pine View High,720,Web Development,1/15/2009
+13423.186,33,Washington District,Utah Online 7-12,500,Web Development,1/15/2009
+1357.4848,33,Washington District,Dixie High,704,Web Development,6/10/2009
+5573.4058,33,Washington District,Desert Hills High,703,Exploring CS,3/28/2014
+2897.5606,33,Washington District,Snow Canyon High,725,Computer Science - Level 2,4/25/2014
+5573.4058,33,Washington District,Desert Hills High,703,Computer Science - Level 2,4/25/2014
+12944.3988,33,Washington District,Snow Canyon High,725,Computer Science - Level 2,4/25/2014
+1357.4848,33,Washington District,Dixie High,704,Exploring CS,2/2/2016
+5573.4058,33,Washington District,Desert Hills High,703,Web Development,3/16/2016
+13423.186,33,Washington District,Pine View High,720,Exploring CS,8/11/2016
+13423.186,33,Washington District,Utah Online 7-12,500,Exploring CS,8/11/2016
+21538.1706,33,Washington District,Pine View Middle,420,Computer Science - Level 2,7/18/2017
+2875.455,34,Wayne District,Wayne High,704,Computer Science - Level 2,1/30/1990
+2931.975,35,Weber District,Weber District,35,Computer Science - Level 2,7/30/1988
+2939.2284,35,Weber District,Roy High,708,Computer Science - Level 2,8/30/1989
+2939.04,35,Weber District,Weber High,704,Computer Science - Level 2,3/30/1993
+1185.0674,35,Weber District,Uintah School,154,Computer Science - Level 2,8/7/2003
+17022.9448,35,Weber District,Roy Jr High,404,Computer Science - Level 2,1/22/2009
+2939.04,35,Weber District,Weber High,704,Computer Science - Level 2,4/25/2014
+17401.4718,35,Weber District,Fremont High,706,Exploring CS,3/10/2015
+9324.9208,35,Weber District,Roy High,708,Exploring CS,5/5/2016
+9324.9208,35,Weber District,Weber Innovation High School,725,Exploring CS,5/5/2016
+9324.9208,35,Weber District,Weber Online K-6,199,Exploring CS,5/5/2016
+2148.2624,35,Weber District,South Ogden Jr High,408,Exploring CS,7/27/2016
+3028.1218,35,Weber District,Snowcrest Jr High,412,Exploring CS,8/11/2016
+14544.6998,35,Weber District,Fremont High,706,Computer Science - Level 2,4/13/2017
+14544.6998,35,Weber District,Roy High,708,Computer Science - Level 2,4/13/2017
+14544.6998,35,Weber District,Weber High,704,Computer Science - Level 2,4/13/2017
+14544.6998,35,Weber District,Weber Innovation High School,725,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Bonneville High,701,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Fremont High,706,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,North Ogden Jr High,402,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Orion Jr High,405,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Rocky Mountain Jr High,403,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Roy High,708,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Roy Jr High,404,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Sand Ridge Jr High,406,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Snowcrest Jr High,412,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,South Ogden Jr High,408,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,T.H. Bell Jr High,410,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Wahlquist Jr High,416,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Weber High,704,Computer Science - Level 2,4/13/2017
+21430.9082,35,Weber District,Weber Innovation High School,725,Computer Science - Level 2,4/13/2017
+14544.6998,35,Weber District,Fremont High,706,Exploring CS,4/13/2017
+14544.6998,35,Weber District,Roy High,708,Exploring CS,4/13/2017
+14544.6998,35,Weber District,Weber High,704,Exploring CS,4/13/2017
+14544.6998,35,Weber District,Weber Innovation High School,725,Exploring CS,4/13/2017
+2936.4966,35,Weber District,North Ogden Jr High,402,Exploring CS,8/17/2017
+17880.9812,35,Weber District,Weber High,704,Computer Science - Level 2,9/20/2017
+17880.9812,35,Weber District,Weber Online K-6,199,Computer Science - Level 2,9/20/2017
+17880.9812,35,Weber District,Weber High,704,Web Development,9/20/2017
+17880.9812,35,Weber District,Weber Online K-6,199,Web Development,9/20/2017
+17216.2118,35,Weber District,Roy Jr High,404,Exploring CS,2/16/2018
+15329.637,35,Weber District,Bonneville High,701,Exploring CS,4/2/2018
+15329.637,35,Weber District,Fremont High,706,Exploring CS,4/2/2018
+15329.637,35,Weber District,Roy High,708,Exploring CS,4/2/2018
+15329.637,35,Weber District,Weber High,704,Exploring CS,4/2/2018
+15329.637,35,Weber District,Weber Online K-6,199,Exploring CS,4/2/2018
+1969.1568,36,Salt Lake District,Highland High,708,Computer Science - Level 2,4/30/1998
+1969.1568,36,Salt Lake District,Highland High,708,Computer Science - Level 2,2/14/2000
+13398.9452,36,Salt Lake District,Salt Lake Technology Center,749,Computer Science - Level 2,8/3/2004
+13398.9452,36,Salt Lake District,Salt Lake Technology Center,749,Web Development,8/10/2004
+13088.5248,36,Salt Lake District,West High,716,Computer Science - Level 2,9/24/2009
+17812.0268,36,Salt Lake District,Highland High,708,Computer Science - Level 2,3/24/2011
+3176.5182,36,Salt Lake District,West High,716,Exploring CS,3/28/2014
+3161.666,36,Salt Lake District,East High,704,Computer Science - Level 2,4/25/2014
+3583.3994,36,Salt Lake District,Ensign School,144,Computer Science - Level 2,4/25/2014
+3583.3994,36,Salt Lake District,Ensign School,144,Computer Science - Level 2,4/25/2014
+2997.13,36,Salt Lake District,Highland High,708,Exploring CS,4/8/2015
+3176.5182,36,Salt Lake District,West High,716,Computer Science - Level 2,5/14/2015
+12.4344,36,Salt Lake District,Salt Lake District,36,Exploring CS,1/18/2018
+13088.5248,36,Salt Lake District,West High,716,Computer Science - Level 1,1/25/2018
+13088.5248,36,Salt Lake District,West High,716,Exploring CS,1/25/2018
+1560.2974,36,Salt Lake District,Highland High,708,Exploring CS,3/21/2018
+3019.7066,37,Ogden City District,Ogden High,707,Computer Science - Level 2,9/30/1994
+2822.86,37,Ogden City District,Ogden High,707,Exploring CS,2/2/2016
+2400.9382,37,Ogden City District,Ben Lomond High,703,Computer Science - Level 2,5/5/2016
+2400.9382,37,Ogden City District,Ben Lomond High,703,Exploring CS,5/5/2016
+2822.86,37,Ogden City District,Ogden High,707,Computer Science - Level 1,2/15/2017
+2822.86,37,Ogden City District,Ogden High,707,Computer Science - Level 2,1/5/2018
+17110.4566,37,Ogden City District,Mount Ogden Junior High,415,Exploring CS,4/12/2018
+3042.503,38,Provo District,Centennial Middle,404,Computer Science - Level 2,6/30/1986
+473.4178,38,Provo District,Timpview High,712,Computer Science - Level 2,1/30/1987
+1935.5274,38,Provo District,Dixon Middle,408,Computer Science - Level 2,7/30/1992
+1935.5274,38,Provo District,Independence High,730,Computer Science - Level 2,7/30/1992
+126.2594,38,Provo District,Provo High,704,Computer Science - Level 2,8/30/1992
+3053.9326,38,Provo District,Provo District,38,Computer Science - Level 2,10/30/1995
+2007.6218,38,Provo District,Timpview High,712,Computer Science - Level 2,12/30/1995
+5579.3718,38,Provo District,Timpview High,712,Computer Science - Level 2,2/23/2001
+1935.5274,38,Provo District,Dixon Middle,408,Computer Science - Level 2,4/25/2014
+1935.5274,38,Provo District,Independence High,730,Computer Science - Level 2,4/25/2014
+8474.4832,38,Provo District,Provo High,704,Computer Science - Level 2,4/25/2014
+8474.4832,38,Provo District,Provo High,704,Computer Science - Level 2,4/25/2014
+17047.845,38,Provo District,Timpview High,712,Computer Science - Level 1,8/25/2017
+11519.4354,38,Provo District,Centennial Middle,404,Exploring CS,1/5/2018
+3056.8842,39,Logan City District,Logan High,704,Computer Science - Level 2,10/30/1990
+3068.565,40,Murray District,Riverview Jr High,412,Computer Science - Level 2,5/30/1989
+2626.4844,40,Murray District,Murray High,704,Computer Science - Level 2,9/30/1993
+3759.8674,40,Murray District,Murray High,704,Computer Science - Level 2,1/28/2002
+2626.4844,40,Murray District,Murray High,704,Web Development,7/2/2015
+17438.5866,40,Murray District,Riverview Jr High,412,Exploring CS,1/12/2016
+3076.6976,40,Murray District,Riverview Jr High,412,Exploring CS,2/2/2016
+2689.3786,42,Canyons District,Hillcrest High,706,Computer Science - Level 2,6/30/1986
+2698.516,42,Canyons District,Jordan High,708,Computer Science - Level 2,6/30/1999
+906.6436,42,Canyons District,Canyons Technical Education Center,740,Computer Science - Level 2,2/23/2000
+16911.883,42,Canyons District,Draper Park Middle,407,Computer Science - Level 2,7/17/2007
+16950.0968,42,Canyons District,Alta High,702,Exploring CS,7/22/2015
+2704.2936,42,Canyons District,Mt. Jordan Middle,408,Exploring CS,3/17/2016
+11520.032,42,Canyons District,Hillcrest High,706,Exploring CS,8/11/2016
+17220.6078,42,Canyons District,Hillcrest High,706,Computer Science - Level 1,7/6/2017
+18373.7414,42,Canyons District,Corner Canyon High,711,Exploring CS,3/21/2018
+2878.9718,76,Northeastern Utah Ed. Serv.,Northeastern Utah Ed. Serv.,76,Computer Science - Level 2,4/25/2014
+2878.9718,76,Northeastern Utah Ed. Serv.,Northeastern Utah Ed. Serv.,76,Computer Science - Level 2,4/25/2014
+9123.584,83,Academy for Math Engineering & Science,Academy for Math Engineering & Science,700,Computer Science - Level 2,10/29/2003
+9123.584,83,Academy for Math Engineering & Science,Academy for Math Engineering & Science,700,Exploring CS,2/20/2014
+9123.584,83,Academy for Math Engineering & Science,Academy for Math Engineering & Science,700,Computer Science - Level 2,4/25/2014
+21455.5886,87,City Academy,City Academy,700,Exploring CS,4/18/2017
+21455.5886,87,City Academy,City Academy,700,Computer Science - Level 1,11/16/2017
+18305.2266,92,Uintah River High,Uintah River High,700,Exploring CS,10/4/2017
+2143.2698,99,USBE,USBE,99,Computer Science - Level 2,8/30/1989
+3757.5124,99,USBE,USBE,99,Computer Science - Level 2,11/20/2002
+2929.2432,99,USBE,USBE,99,Computer Science - Level 2,4/25/2014
+2929.2432,99,USBE,USBE,99,Computer Science - Level 2,4/25/2014
+18016.221,99,USBE,USBE,99,Computer Science - Level 1,8/18/2016
+18016.221,99,USBE,USBE,99,Exploring CS,8/18/2016
+13413.6404,99,USBE,USBE,99,Exploring CS,3/1/2017
+13729.2104,99,USBE,USBE,99,Computer Science - Level 1,11/2/2017
+1282.376,1B,Utah County Academy of Science,Utah County Academy of Science,700,Computer Science - Level 2,6/30/1991
+10567.7014,1B,Utah County Academy of Science,Utah County Academy of Science,700,Web Development,10/3/2011
+10567.7014,1B,Utah County Academy of Science,Utah County Academy of Science,700,Exploring CS,3/10/2015
+6872.3296,1I,Utah International Charter School,Utah International Charter School,700,Computer Science - Level 2,4/5/2005
+9145.1244,1J,American International School of Utah,American International School of Utah,800,Computer Science - Level 2,8/12/2015
+9145.1244,1J,American International School of Utah,American International School of Utah,800,Exploring CS,2/9/2016
+12957.21,2C,Intech Collegiate High School,Intech Collegiate High School,600,Computer Science - Level 2,8/24/2010
+18230.9342,2C,Intech Collegiate High School,Intech Collegiate High School,600,Computer Science - Level 2,5/1/2015
+17508.7342,2F,Rockwell Charter High School,Rockwell Charter High School,700,Web Development,10/3/2014
+18058.454,2J,Ascent Academies of Utah,Ascent Academies of Utah Farmington,300,Exploring CS,2/2/2016
+17815.889,3B,Beehive Science & Technology Academy,Beehive Science & Technology Academy,700,Computer Science - Level 2,4/6/2012
+21545.0472,3B,Beehive Science & Technology Academy,Beehive Science & Technology Academy,700,Computer Science - Level 1,8/17/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - NSL,100,Computer Science - Level 2,7/27/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - Pleasant Grove,300,Computer Science - Level 2,7/27/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - NSL,100,Exploring CS,7/27/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - Pleasant Grove,300,Exploring CS,7/27/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - NSL,100,Web Development,7/27/2017
+17985.135,3D,Spectrum Academy,Spectrum Academy - Pleasant Grove,300,Web Development,7/27/2017
+1077.5538,3F,Venture Academy,Venture Academy,100,Computer Science - Level 2,8/30/1988
+17366.9318,3F,Venture Academy,Venture Academy,100,Exploring CS,12/5/2016
+17834.8232,3F,Venture Academy,Venture Academy,100,Exploring CS,3/7/2018
+2723.1964,4D,Syracuse Arts Academy,Syracuse Arts Academy - Antelope,100,Computer Science - Level 2,5/30/1991
+2968.8386,4F,Salt Lake Center for Science Education,Salt Lake Center for Science Education,300,Computer Science - Level 2,10/30/1987
+21778.7574,5F,Utah Virtual Academy,Utah Virtual Academy,700,Computer Science - Level 1,6/8/2017
+21778.7574,5F,Utah Virtual Academy,Utah Virtual Academy,700,Computer Science - Level 2,6/8/2017
+22469.055,7G,Summit Academy High School,Summit Academy High School,700,Computer Science - Level 1,4/11/2018
+22469.055,7G,Summit Academy High School,Summit Academy High School,700,Exploring CS,4/11/2018
+9941.8994,8B,American Leadership Academy,American Leadership Academy,100,Computer Science - Level 2,7/23/2004
+273.4626,8B,American Leadership Academy,American Leadership Academy,100,Exploring CS,7/27/2016
+866.2004,8C,Mountainville Academy,Mountainville Academy,100,Computer Science - Level 2,8/30/1993
+1793.8192,9E,Providence Hall,Providence Hall,100,Computer Science - Level 2,7/30/1997
+21620.156,9E,Providence Hall,Providence Hall,100,Computer Science - Level 2,10/1/2017
+21620.156,9E,Providence Hall,Providence Hall,100,Exploring CS,10/1/2017
+106.5402,9F,Mountain Heights Academy,Mountain Heights Academy,600,Computer Science - Level 2,6/30/1987
+17484.6504,9F,Mountain Heights Academy,Mountain Heights Academy,600,Web Development,1/29/2014
+2439.5916,A1,No. UT. Acad. for Math Engineering & Science,No. UT. Acad. for Math Engineering & Science,700,Computer Science - Level 2,3/30/1999
+18367.8382,A1,No. UT. Acad. for Math Engineering & Science,No. UT. Acad. for Math Engineering & Science,700,Computer Science - Level 1,8/29/2017
+3161.5404,FC,Utah Catholic Schools,Judge Memorial Catholic High,959,Computer Science - Level 2,4/25/2014
+2535.55,FR,Rowland Hall-St Mark's Schools,Rowland Hall-St Mark's (Sec),969,Computer Science - Level 2,1/30/1987

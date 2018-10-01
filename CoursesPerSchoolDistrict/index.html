@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course Enrollments per School (in a District)</title>
+<style>
+
+.axis { font: 14px sans-serif; }
+
+.bar {
+  fill: steelblue;
+}
+
+</style>
+
+</head>
+
+<h1 class='title'>Course Enrollments per School</h1>
+
+<div>
+<svg width="960" height="700"></svg>
+</div>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<script>
+
+/*
+
+- going to have to check for discrepancies and add to mapping, like 'Salt Lake'
+- have a max bar width.  somehow.  e.g., for Beaver
+
+- Beaver, Box Elder, Granite, and Weber districts are great test-beds.
+  small, small, big, big
+
+*/
+
+// max width of bar (in px likely)
+const MAX_WIDTH = 100;
+const DATA_FILE =  '20180823-1732-BrandonCSTaskForce - Sheet1.csv';
+
+let params = (new URL(document.location)).searchParams;
+let bare_lea = params.get('lea');
+let district = bare_lea + ' District';
+
+let mapping = {
+  'Salt Lake City District': 'Salt Lake District'
+}
+
+district = mapping[district] || district;
+
+document.getElementsByClassName('title')[0].innerHTML +=
+  ' (' + district + ')';
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 300, left: 70},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+let x = d3.scaleBand().range([0, width]).padding(0.1);
+let y = d3.scaleLinear().rangeRound([height, 0]);
+
+let graph = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv('Stefan - LEAs.csv',
+function(d) {
+  return {
+    id: d.WarehouseDisID,
+    name: d.District
+  };
+},
+function(error, district_data) {
+
+if (error) throw error;
+
+d3.csv(DATA_FILE,
+function (d) {
+  return {
+    lea: d.district_id,
+    school: d.school_number,
+    enrol: d['Student enrollment'],
+    year: d.school_year
+  };
+},
+function(error, data) {
+
+  if (error) throw error;
+
+
+  let district_id = district_data.find( e => e.name === bare_lea).id;
+
+  let filtered_data = data.filter(function(d) {
+    if (d.lea === district_id && d.year === '2018') {
+      return d;
+    }
+  });
+
+
+
+  // citation: http://www.shanegibney.com/shanegibney/d3-js-v4-count-values-in-an-object/
+  let course_count_data = d3.nest()
+    .key(function(d) {
+      return d.school;
+    })
+    .rollup(function(leaves) {
+      let enrolment = 0;
+      leaves.forEach( e => enrolment +=  +e.enrol )
+      return enrolment;
+    })
+    .entries(filtered_data);
+
+
+  let sorted_data = course_count_data.sort(function(a,b) { 
+    let lea_A =  a.key.toLowerCase();
+    let lea_B =  b.key.toLowerCase();
+
+    if (lea_A < lea_B) {
+      return -1;
+    } else if (lea_A > lea_B) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
+
+  // sigh.  based on
+  // - https://bl.ocks.org/d3noob/3c040800ff6457717cca586ae9547dbf rotation
+  // - https://bl.ocks.org/mbostock/3885304 text x axis labels
+  // - only ints on y https://stackoverflow.com/questions/13576906
+  // - no ticksSubdivide in d4
+  //   http://www.d3noob.org/2016/08/changing-number-of-ticks-on-axis-in.html
+  //   and max:  https://stackoverflow.com/questions/11488194 (2nd "answer")
+  // Add the x Axis
+  x.domain(sorted_data.map(function(d) { return d.key; }));
+  let max_y_value = d3.max(sorted_data, function(d) { return +d.value; });
+  y.domain([0, max_y_value]);
+
+
+  graph.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-65)");
+
+  // Add the y Axis
+  graph.append("g")
+    .attr("class", "axis")
+    .call(
+      d3
+        .axisLeft(y)
+        .ticks(max_y_value < 10 ? max_y_value : 10)
+        .tickFormat(d3.format("d"))
+      );
+
+  graph.selectAll(".bar")
+  .data(sorted_data)
+  .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.key); })
+    .attr("y", function(d) { return y(+d.value); })
+    .attr("width", x.bandwidth())
+    .attr("height", function(d) { return height - y(d.value); });
+
+});
+
+});
+
+
+</script>
+
+</body>
+</html>

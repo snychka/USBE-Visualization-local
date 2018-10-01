@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Utah Map with School Districts</title>
+
+
+<style>
+
+.container {
+	width: 90%;
+	margin: auto;
+	overflow: auto;
+	display: table;
+}
+
+.svg {
+	width: 65%;
+	float: left;
+	display: table-row;
+}
+
+.links {
+	width: 35%;
+  height: 400px;
+	float: left;
+	display: table-row;
+	overflow-x: auto;
+	overflow-y: scroll;
+}
+
+/* didn't need to use. leaving in, but weird */
+.clear {
+    clear: both;
+}
+
+.clear:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0px;
+    visibility: hidden;
+}
+
+div.tooltip {
+  position: absolute;    
+  text-align: center;    
+  padding: 2px;    
+  font: 12px sans-serif;    
+  background: lightsteelblue;    
+  border: 0px;                    
+  border-radius: 8px;
+}
+
+</style>
+
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+
+</head>
+<body>
+
+<h1>Utah School Districts</h1>
+
+<h2>Links to endorsements per district</h2>
+
+<p> Hover over district and click on link in tool tip.</p>
+
+<p> Will show number of CS endorsements per school for the given district (LEA) </p>
+
+<div class="container">
+<div class="svg">
+
+</div>
+
+<div class="links">
+
+</div>
+
+<div class="clear"></div>
+
+
+</div> <!-- container div -->
+
+<script>
+
+  /*
+  - Took template from Ben Sullin's Geospatial Pluralsight course, and from
+    various examples by Mike Bostock
+
+  - MAKE LINKS CODE LESS HACKY.  somehow
+    - consolidating href code, easy.  do it
+    - try to pass in properties.  nested, so not sure how/if possible :(
+  - put enrolments in tooltip
+
+  not overly important; in order of easiest to fix or a tad bit more important
+  - make tooltip link look a bit better (css)
+  - make tooltip show up in center of state (I think)
+  - other issue is need a different projection so doesn't correspond to
+    roundness of the earth.  couldn't easily fix, not horrible, ignoring for now
+  - add heat map for overall enrolments later, likely can use
+    https://github.com/d3/d3-scale#_continuous
+  */
+
+  function create_links_from_data(d3, selector, data, identifier) {
+    let select_divs = d3.select(selector)
+      .selectAll('div')
+      .data(data)
+      .enter()
+      .append('div')
+      .html(function (d) {
+        // remove trailing ' School District'
+        // case-insensitive, only single space delimiters
+        let query = d.properties.NAME.replace(/\s/g, '+');
+        let last_word_index = query.lastIndexOf('+');
+        let second_last_word_index = query.lastIndexOf('+', last_word_index-1);
+        if (query.substring(second_last_word_index+1).toLowerCase()  === 
+            'school+district') {
+          query = query.substring(0, second_last_word_index);
+        }
+        return '<a href= "../EndorsementsPerSchoolDistrict?lea=' + query +'" target="_blank">' +
+          d.properties.NAME + '</a>';
+        console.log(temp);
+        return temp;
+      });
+  }
+
+  //Width and height
+  //let w = window.innerWidth;
+  let h = window.innerHeight;
+
+  let tooltip = d3.select('body')
+    .append('div')
+    .attr('class', 'tooltip')
+    .style('opacity', 0);
+
+  //Create SVG element
+  let svg = d3.select(".svg").append("svg");
+  svg.attr('width', '100%');
+  svg.attr('height', h);
+
+  //Load in GeoJSON data
+  d3.json("districts-new-topo.json", function(error, json) {
+
+    let projection = d3.geoAlbersUsa();
+
+    //Define path generator
+    let path = d3.geoPath().projection(projection);
+
+    // this is needed; not quite sure why
+    // (from book mentioned below)
+    // believe it's due to projection for entire country
+    projection
+      .scale(1)
+      .translate([0,0]);
+
+    // json.objects.districts from console devtools
+    let state = topojson.feature(json, json.objects.districts)
+
+    // from 'Learning D3.js 4 Mapping - Second Edition'
+    // similar to https://bl.ocks.org/mbostock/4699541
+    // compute bounds of a point of interest, then derive scale and translate
+    let w = +d3.select('body').select('svg').style('width').replace(/px$/, '');
+    let b = path.bounds(state),
+        s = .95 / Math.max((b[1][0] - b[0][0]) / w, (b[1][1] - b[0][1]) / h),
+        t = [(w - s * (b[1][0] + b[0][0])) / 2, (h - s * (b[1][1] + b[0][1])) / 2];
+
+    // update the projection to use computed scale and translate....
+    // I think for state?
+    projection
+      .scale(s)
+      .translate(t);
+
+    let color = d3.scaleLinear()
+      .domain([0,40])
+      .range(d3.schemeOrRd[3]);
+
+    let id = 0;
+    // Bind data and create one path per GeoJSON feature
+    let map = svg.append('g');
+
+    let data = state.features.sort(function(a,b) { 
+      let name_A =  a.properties.NAME.toLowerCase();
+      let name_B =  b.properties.NAME.toLowerCase();
+
+      if (name_A < name_B) {
+        return -1;
+      } else if (name_A > name_B) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+
+    create_links_from_data(d3, '.links', data, "blargh");
+
+    let districts = map.selectAll("path")
+      .data(data)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr('stroke', 'white')
+        .attr("fill", function(d) {
+          return color(id++);
+        })
+        .on('mouseenter', function(d) {
+          tooltip.style('opacity', 0.9);
+
+          // remove trailing ' School District'
+          // case-insensitive, only single space delimiters
+          let query = d.properties.NAME.replace(/\s/g, '+');
+          let last_word_index = query.lastIndexOf('+');
+          let second_last_word_index = query.lastIndexOf('+', last_word_index-1);
+          if (query.substring(second_last_word_index+1).toLowerCase()  === 
+              'school+district') {
+            query = query.substring(0, second_last_word_index);
+          }
+
+          tooltip.html
+            (
+            '<a href= "../EndorsementsPerSchoolDistrict?lea=' + query +'" target="_blank">' +
+            d.properties.NAME + '</a>'
+            )
+            .style('left', (d3.event.pageX) + 'px')
+            .style('top', (d3.event.pageY) + 'px');
+        })
+
+    // comes very close to only removing tooltip when
+    // mouse leaves entire state.
+    // (if leaves for tooltip, then svg, tooltip'll stick around ...
+    // not too bad.  original issue is tooltip "steals" mouse event
+    // from g ... sigh)
+    map.on('mouseleave', function() {
+      if (d3.event.relatedTarget &&
+          d3.event.relatedTarget.tagName === 'svg') {
+        tooltip.style('opacity', 0);
+      }
+    });
+
+  });
+
+</script>
+
+    </body>
+</html>
