@@ -1,9 +1,11 @@
-# USBE-Visualization
+USBE-Visualization
 
-- [School Districts Map - Endorsements](https://snychka.github.io/USBE-Visualization/SchoolDistrictMap-Endorsements)
-  - links to graphs of endorsements per school
-- [School Districts Map - Course Enrollments](https://snychka.github.io/USBE-Visualization/SchoolDistrictMap-Courses)
-  - links to graphs of CS enrollments per school
-- [Business vs CS Course Enrollments](https://snychka.github.io/USBE-Visualization/BusinessVsCSCourseEnrollment/)
+This is the local version, and will not run here (at GitHub).  Use
+[USBE-Visualization](https://github.com/snychka/USBE-Visualization) to run
+online.
 
+This will only work when
 
+- downloaded (e.g., via Clone or download >> Download ZIP)
+- and if a web server (e.g., https://caddyserver.com/) is run locally in the
+  root of this local project
