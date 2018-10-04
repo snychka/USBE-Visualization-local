@@ -39,18 +39,6 @@
 	overflow-y: scroll;
 }
 
-.intro {
-  float: left;
-	display: table-row;
-}
-
-.courses {
-  float: left;
-	display: table-row;
-}
-
-
-
 /* didn't need to use. leaving in, but weird */
 .clear {
     clear: both;
@@ -74,7 +62,15 @@ div.tooltip {
   border-radius: 8px;
 }
 
+.intro {
+  float: left;
+	display: table-row;
+}
 
+.courses {
+  float: left;
+	display: table-row;
+}
 
 </style>
 
@@ -90,7 +86,7 @@ div.tooltip {
 
 <h1>Utah School Districts</h1>
 
-<h2>Links to Digital course enrollments per district</h2>
+<h2>Links to CS course enrollments per district</h2>
 
 <p> Hover over a district and click on link in tool tip to go to a district
 (LEA), or choose a district or Charter from the links on the right.</p>
@@ -114,17 +110,6 @@ Charter. </p>
   <li>Computer Science Principles      (35020000035)</li>
   <li>Exploring CS                     (35020000007)</li>
   <li>Web Development 1                (35020000060)</li>
-
-</ul>
-
-<p>Business courses:</p>
-
-<ul>
-
-  <li>Business Office Specialist       (32020000216)</li>
-  <li>Business Office Specialist CE    (32020013216)</li>
-  <li>Digital Business Applications    (32020000150)</li>
-  <li>Digital Business Applications CE (32020013150)</li>
 
 </ul>
 
@@ -202,7 +187,7 @@ Charter. </p>
             'school+district') {
           query = query.substring(0, second_last_word_index);
         }
-        return '<a href= "../CoursesPerSchoolDistrict?lea=' + query +'" target="_blank">' +
+        return '<a href= "../CoursesPerSchoolDistrict-CS?lea=' + query +'" target="_blank">' +
           d.properties.NAME + '</a>';
         return temp;
       });
@@ -301,7 +286,7 @@ Charter. </p>
 
           tooltip.html
             (
-            '<a href= "../CoursesPerSchoolDistrict?lea=' + query +'" target="_blank">' +
+            '<a href= "../CoursesPerSchoolDistrict-CS?lea=' + query +'" target="_blank">' +
             d.properties.NAME + '</a>'
             )
             .style('left', (d3.event.pageX) + 'px')
@@ -346,7 +331,7 @@ Charter. </p>
           .html(function (d) {
 
             let query = encodeURIComponent(d.name);
-            return '<a href= "../CoursesPerSchoolDistrict?lea=' + query + '&charter=true" target="_blank">' +
+            return '<a href= "../CoursesPerSchoolDistrict-CS?lea=' + query + '&charter=true" target="_blank">' +
               d.name + '</a>';
 
 
