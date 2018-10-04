@@ -6,10 +6,31 @@
 <title>Courses per School (in a District)</title>
 <style>
 
+/* https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7 */
+.tooltip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 14px;
+  text-align: center;
+}
+
 .axis { font: 14px sans-serif; }
 
 .bar {
   fill: steelblue;
+}
+
+.instructions {
+  display: inline;
+  padding-right: 30px;
+}
+
+#year-select {
+  font-size:  1.2em;
 }
 
 </style>
@@ -24,8 +45,15 @@
 
 <h1 class='title'>Business vs Computing Course Enrollments</h1>
 
-<p>Enrollments per year, for the entire state, of Business vs Computing Science
-courses.</p>
+<h3>Enrollments per year, for the entire state, of Business vs Computing Science
+courses.</h3>
+
+<p class='instructions'>Select to to group by Computing Science vs Business (<strong>CS vs Bus</strong>), or show individual <strong>Courses</strong>:</p>
+
+<select id="year-select">
+    <option value="type">CS vs Bus</option>
+    <option value="course">Courses</option>
+</select>
 
 <div>
 <svg width="960" height="700"></svg>
@@ -49,18 +77,20 @@ const DATA_FILE =  '20180823-1732-BrandonCSTaskForce - Sheet3.csv';
 const BUS = 'Business';
 const CS = 'Computing Science';
 
-// there's a 35020000034 in the file ... ask Brandon
+// redundant data structure ... may be a better way.
+// also should be in a separate file at this point.
 let course_mapping = {
-  '32020000150' : { type : BUS },
-  '32020000216' : { type : BUS },
-  '32020013150' : { type : BUS },
-  '32020013216' : { type : BUS },
-  '35020000007' : { type : CS },
-  '35020000030' : { type : CS },
-  '35020000035' : { type : CS },
-  '35020000060' : { type : CS },
-  '35020013030' : { type : CS },
-  '35020013035' : { type : CS }
+  '35020000034' : { course: 'A.P.  Computer Science Principles', type : CS },
+  '35020000030' : { course: 'Computer Programming 1', type : CS },
+  '35020013030' : { course: 'Computer Programming 1 CE', type : CS },
+  '35020013035' : { course: 'Computer Programming 2 CE', type : CS },
+  '35020000035' : { course: 'Computer Science Principles', type : CS },
+  '35020000007' : { course: 'Exploring CS', type : CS },
+  '35020000060' : { course: 'Web Development 1', type : CS },
+  '32020000216' : { course: 'Business Office Specialist', type : BUS },
+  '32020013216' : { course: 'Business Office Specialist CE', type : BUS },
+  '32020000150' : { course: 'Digital Business Applications', type : BUS },
+  '32020013150' : { course: 'Digital Business Applications CE', type : BUS },
 };
 
 
@@ -89,116 +119,159 @@ function (d, i, c) {
 },
 function(error, data) {
 
-  // tally up enrolments per year and course type
-  // (should be able to reasonably easy make it more generic
-  //  so later it can, with a few mods., handle per course name)
-  function project_data(d) {
+  function update_graph(data, type) {
 
-    let graph_map = new Map();
+    graph.selectAll('*').remove();
 
-    d.forEach(function(d) {
+    // tally up enrolments per year and course type
+    // (should be able to reasonably easy make it more generic
+    //  so later it can, with a few mods., handle per course name)
+    function project_data(d, prop) {
 
-      let type_obj = course_mapping[d.code];
-      if (!type_obj) { return; }
-      let type = type_obj.type;
+      let graph_map = new Map();
 
-      let key = JSON.stringify({year: d.year, type});
-      let val = graph_map.get(key);
-      if (!val) {
-        val = 0;
-      }
-      graph_map.set(key, val + d.enrol);
+      d.forEach(function(d) {
 
-    });
+        let type_obj = course_mapping[d.code];
+        if (!type_obj) { return; }
+        let type = type_obj[prop];
 
-    return graph_map;
-  }
+        let key = JSON.stringify({year: d.year, type});
+        let val = graph_map.get(key);
+        if (!val) {
+          val = 0;
+        }
+        graph_map.set(key, val + d.enrol);
 
+      });
 
-  let graph_map = project_data(data);
-
-  // create an array, with a nested structure, conducive to the nested
-  // structure of the bar chart
-  // (again, similar to project_data, can likely make this more generic ...
-  //  later make into a function, too)
-  let graph_data = []
-  for (let entry of graph_map.entries()) {
-    let key = JSON.parse(entry[0]);
-    let el = graph_data.find( e => e.year === key.year);
-    if (!el) {
-      el = {
-        year: key.year, 
-        inner: []  
-      };
-      graph_data.push(el);
+      return graph_map;
     }
-    el.inner.push({ type: key.type, enrol: entry[1]});
-  }
-  graph_data.sort((a,b) => +a.year - +b.year);
 
-  // get just types (made more complex to allow for future bars representing
-  // courses)
-  let bar_type_set = new Set();
-  graph_data.forEach(function(el) {
-    el.inner.forEach(function(d) {
-      bar_type_set.add(d.type);
+    let graph_map = project_data(data, type);
+
+    // create an array, with a nested structure, conducive to the nested
+    // structure of the bar chart
+    // (again, similar to project_data, can likely make this more generic ...
+    //  later make into a function, too)
+    let graph_data = []
+    for (let entry of graph_map.entries()) {
+      let key = JSON.parse(entry[0]);
+      let el = graph_data.find( e => e.year === key.year);
+      if (!el) {
+        el = {
+          year: key.year, 
+          inner: []  
+        };
+        graph_data.push(el);
+      }
+      el.inner.push({ type: key.type, enrol: entry[1]});
+    }
+    graph_data.sort((a,b) => +a.year - +b.year);
+
+    // get just types (made more complex to allow for future bars representing
+    // courses)
+    let bar_type_set = new Set();
+    graph_data.forEach(function(el) {
+      el.inner.forEach(function(d) {
+        bar_type_set.add(d.type);
+      });
     });
+
+    // for ordering
+    let course_mapping_array = Object.keys(course_mapping).map( (e) =>
+      course_mapping[e].course
+    );
+    console.log(Object.keys(course_mapping));
+    console.log(course_mapping_array);
+    let bar_type_keys = Array.from(bar_type_set).sort( (a, b) => {
+      let a_index = course_mapping_array.indexOf(a);
+      return a_index >= 0 ?
+        a_index - course_mapping_array.indexOf(b) :
+        a.localeCompare(b);
+    });
+
+    let legend_scale = d3.scaleOrdinal()
+      .domain([1,bar_type_keys.length])
+      // https://stackoverflow.com/questions/38898947/dynamically-create-legend-in-d3
+      // and apparently from colorBrewer
+      .range(["#d73027", "#f46d43", "#fdae61", "#fee090", "#e0f3f8",
+              "#abd9e9", "#74add1", "#4575b4"].slice(0, bar_type_keys.length));
+
+    x0.domain(graph_data.map( d => d.year ));
+    x1.domain(bar_type_keys).rangeRound([0, x0.bandwidth()]);
+    y.domain([0, d3.max(graph_data, el => d3.max(el.inner, d => d.enrol))]);
+
+    let tooltip = d3.select('body')
+      .append('div')
+      .attr('class', 'tooltip');
+
+    graph.append('g')
+      .selectAll('g')
+      .data(graph_data)
+      .enter().append('g')
+        .attr('transform', d => 'translate(' + x0(d.year) + ',0)')
+      .selectAll('rect')
+      .data( d => d.inner)
+        .enter().append('rect')
+        .attr('x', d => x1(d.type))
+        .attr('y', d => y(d.enrol))
+        .attr('width', x1.bandwidth())
+        .attr('height', d => height - y(d.enrol))
+        .attr('fill', d=> legend_scale(d.type))
+        // https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+        .on('mousemove', function(d) {
+            tooltip
+              .style('display', 'inline-block')
+              .html(d.type + ':<br />' + d3.format(',')(d.enrol))
+              .style('left', (d3.event.pageX - 50) + 'px')
+              .style('top', (d3.event.pageY - 70) + 'px');
+        })
+        .on('mouseleave', () =>  {
+          tooltip.style('display', 'none');
+         });
+
+    graph.append('g')
+      .attr('class', 'axis')
+      .attr('transform', 'translate(0,' + height + ')')
+      .call(d3.axisBottom(x0));  
+
+    // removing end tick
+    // https://stackoverflow.com/questions/13669239/remove-end-ticks-from-d3-js-axis
+    // Arthur's comment
+    graph.append('g')
+      .attr('class', 'axis')
+      .call(d3.axisLeft(y).ticks(null).tickSizeOuter(0));
+     
+    let legend = graph.append('g')
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', 10)
+      .selectAll('g')
+      .data(bar_type_keys)
+      .enter().append('g')
+        .attr('transform', (d, i) => 'translate(0,' + i * 20 + ')');
+
+    legend.append('rect')
+      .attr('x', 19)
+      .attr('width', 19)
+      .attr('height', 19)
+      .attr('fill', legend_scale);
+
+    legend.append('text')
+      .attr('x', 19 + 24)
+      .attr('y', 9.5)
+      .attr('dy', '0.32em')
+      .text( d => d);
+
+  } // end of update_graph
+
+  update_graph(data, 'type');
+
+  let year_select = document.querySelector('#year-select');
+  year_select.addEventListener('change', function(e) {
+    let type = this.options[this.selectedIndex].value;
+    update_graph(data, type);
   });
-  let bar_type_keys = Array.from(bar_type_set);
-
-  let legend_scale = d3.scaleOrdinal()
-    .domain([1,bar_type_keys.length])
-    .range(['slateblue', 'steelblue'])
-
-  x0.domain(graph_data.map( d => d.year ));
-  x1.domain(bar_type_keys).rangeRound([0, x0.bandwidth()]);
-  y.domain([0, d3.max(graph_data, el => d3.max(el.inner, d => d.enrol))]);
-
-  graph.append('g')
-    .selectAll('g')
-    .data(graph_data)
-    .enter().append('g')
-      .attr('transform', d => 'translate(' + x0(d.year) + ',0)')
-    .selectAll('rect')
-    .data( d => d.inner)
-      .enter().append('rect')
-      .attr('x', d => x1(d.type))
-      .attr('y', d => y(d.enrol))
-      .attr('width', x1.bandwidth())
-      .attr('height', d => height - y(d.enrol))
-      .attr('fill', d=> legend_scale(d.type));
-
-  graph.append('g')
-    .attr('class', 'axis')
-    .attr('transform', 'translate(0,' + height + ')')
-    .call(d3.axisBottom(x0));  
-
-  // removing end tick
-  // https://stackoverflow.com/questions/13669239/remove-end-ticks-from-d3-js-axis
-  // Arthur's comment
-  graph.append('g')
-    .attr('class', 'axis')
-    .call(d3.axisLeft(y).ticks(null).tickSizeOuter(0));
-   
-  let legend = graph.append('g')
-      .attr('font-family', 'sans-serif')
-      .attr('font-size', 10)
-    .selectAll('g')
-    .data(bar_type_keys)
-    .enter().append('g')
-      .attr('transform', (d, i) => 'translate(0,' + i * 20 + ')');
-
-  legend.append('rect')
-    .attr('x', 19)
-    .attr('width', 19)
-    .attr('height', 19)
-    .attr('fill', legend_scale);
-
-  legend.append('text')
-    .attr('x', 19 + 24)
-    .attr('y', 9.5)
-    .attr('dy', '0.32em')
-    .text( d => d);
 
 });
 
