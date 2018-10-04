@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CS Course Enrollments per School (in a District or Charter)</title>
+<style>
+
+/* https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7 */
+.tooltip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 14px;
+  text-align: center;
+}
+
+.x { font: 14px sans-serif; }
+.y { font: 14px sans-serif; }
+
+.bar {
+  fill: steelblue;
+}
+
+.instructions {
+  display: inline;
+  padding-right: 30px;
+}
+
+#year-select {
+  font-size:  1.2em;
+}
+
+.message {
+  color: red;
+}
+
+</style>
+
+</head>
+
+<h1 class='title'>CS Course Enrollments per School</h1>
+
+<h2 class='instructions'>Please select a year:</h2>
+
+<select id="year-select">
+    <option value="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+</select>
+
+<h2 class='message' style='display: none'>NO ENROLLMENTS</h2>
+
+<div>
+<svg width="960" height="700"></svg>
+</div>
+
+<script src="../lib/d3.v4.min.js"></script>
+
+<script>
+
+/*
+
+- going to have to check for discrepancies and add to mapping, like 'Salt Lake'
+- have a max bar width.  somehow.  e.g., for Beaver
+
+- Beaver, Box Elder, Granite, and Weber districts are great test-beds.
+  small, small, big, big
+
+*/
+
+// max width of bar (in px likely)
+const MAX_WIDTH = 100;
+const DATA_LOCATION = '../enrolment-data/';
+const DATA_FILE =  DATA_LOCATION + '20180928-1534-BrandonCSTaskForce - Sheet1.csv';
+// prefix of course code to exclude from data.
+// e.g., if a course code starts with 32, it's a business course, and no
+// business courses will be included
+const EXCLUDE_PREFIX = '32';
+
+let params = (new URL(document.location)).searchParams;
+let bare_lea = params.get('lea');
+let charter = params.get('charter') !== null;
+
+let mapping = {
+  'Salt Lake City': 'Salt Lake'
+}
+bare_lea = mapping[bare_lea] || bare_lea;
+let district = bare_lea;
+
+if (charter !== true) {
+  district = bare_lea + ' District';
+}
+
+document.getElementsByClassName('title')[0].innerHTML +=
+  ' (' + district + ')';
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 300, left: 70},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+let x = d3.scaleBand().range([0, width]).padding(0.1);
+let y = d3.scaleLinear().rangeRound([height, 0]);
+// hack to only add axis the first time through
+let first = true;
+let x_axis;
+let y_axis;
+
+let graph = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv('../enrolment-data/Stefan - LEAs.csv',
+function(d) {
+  return {
+    id: d.WarehouseDisID,
+    name: d.District
+  };
+},
+function(error, district_data) {
+
+if (error) throw error;
+
+d3.csv(DATA_FILE,
+function (d) {
+  return {
+    lea: d.district_id,
+    school_name: d.School,
+    code: d.core_code,
+    enrol: d['Student enrollment'],
+    year: d.school_year
+  };
+},
+function(error, data) {
+
+  if (error) throw error;
+
+  function create_graph(data, year) {
+
+  // https://stackoverflow.com/questions/4866229/can-you-check-an-objects-css-display-with-javascript
+  document.querySelector('.message').style.display = 'none';
+
+    // as base data has this eventually can get rid of this 2nd step
+    let district_id = district_data.find( e => e.name === bare_lea).id;
+
+    let filtered_data = data.filter(function(d) {
+      if (d.lea === district_id && 
+          d.year === year && 
+          d.code.substring(0,2) !== EXCLUDE_PREFIX
+          ) {
+        return d;
+      }
+    });
+
+
+
+    // citation: http://www.shanegibney.com/shanegibney/d3-js-v4-count-values-in-an-object/
+    let course_count_data = d3.nest()
+      .key(function(d) {
+        return d.school_name;
+      })
+      .rollup(function(leaves) {
+        let enrolment = 0;
+        leaves.forEach( e => enrolment +=  +e.enrol )
+        return enrolment;
+      })
+      .entries(filtered_data);
+
+
+    let sorted_data = course_count_data.sort(function(a,b) { 
+      let lea_A =  a.key.toLowerCase();
+      let lea_B =  b.key.toLowerCase();
+
+      if (lea_A < lea_B) {
+        return -1;
+      } else if (lea_A > lea_B) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+
+
+    // sigh.  based on
+    // - https://bl.ocks.org/d3noob/3c040800ff6457717cca586ae9547dbf rotation
+    // - https://bl.ocks.org/mbostock/3885304 text x axis labels
+    // - only ints on y https://stackoverflow.com/questions/13576906
+    // - no ticksSubdivide in d4
+    //   http://www.d3noob.org/2016/08/changing-number-of-ticks-on-axis-in.html
+    //   and max:  https://stackoverflow.com/questions/11488194 (2nd "answer")
+    x.domain(sorted_data.map(function(d) { return d.key; }));
+    let max_y_value = d3.max(sorted_data, function(d) { return +d.value; });
+    y.domain([0, max_y_value]);
+
+    if (sorted_data.length === 0)  {
+      graph.selectAll('*').remove();
+      let message = document.querySelector('.message');
+      message.style.display = 'block';
+      first = true;
+    }
+
+    // https://bl.ocks.org/HarryStevens/678935d06d4601c25cb141bacd4068ce
+    // helped me see what part of axis code is adding, and not so much
+    // affected by updates (in if) and what part is affected by updated data
+    // (after if)
+    if (first) {
+
+      // Add the x Axis
+      x_axis = graph.append("g")
+        .attr("class", "x")
+        .attr("transform", "translate(0," + height + ")");
+
+      // Add the y Axis
+      y_axis = graph.append("g")
+        .attr("class", "y");
+
+      first = false;
+
+    }
+
+    // link data to x
+    x_axis
+      .call(d3.axisBottom(x))
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-65)");
+
+    // link data to y
+     y_axis.call(
+          d3
+            .axisLeft(y)
+            .ticks(max_y_value < 10 ? max_y_value : 10)
+            .tickFormat(d3.format("d"))
+          );
+
+    let tooltip = d3.select('body')
+      .append('div')
+      .attr('class', 'tooltip');
+
+    // create bars
+    let bars = graph.selectAll(".bar")
+      .data(sorted_data);
+
+    bars.enter().append("rect")
+      .merge(bars)
+      // https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+      // had to put here, as if after transition with attrs, it caused a runtime
+      // error
+      .on('mousemove', function(d) {
+          tooltip
+            .style('display', 'inline-block')
+            .html(d.value)
+            .style('left', (d3.event.pageX - 50) + 'px')
+            .style('top', (d3.event.pageY - 70) + 'px');
+      })
+      .on('mouseleave', () =>  {
+        tooltip.style('display', 'none');
+       })
+      .transition(d3.transition().duration(750))
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.key); })
+      .attr("y", function(d) { return y(+d.value); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d.value); });
+
+    bars.exit().remove();
+
+  } // end create_graph
+
+  create_graph(data, '2018');
+
+  let year_select = document.querySelector('#year-select');
+  // hmmm ... couldn't use an arrow function callback as had no this??
+  // https://dmitripavlutin.com/when-not-to-use-arrow-functions-in-javascript/
+  // horribly written, but probably right (#2)
+  year_select.addEventListener('change', function(e) {
+    let year = this.options[this.selectedIndex].value;
+    create_graph(data, year);
+  });
+
+});
+
+});
+
+
+</script>
+
+</body>
+</html>
